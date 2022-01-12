@@ -13,3 +13,7 @@ Added style components using below command
 ```
 npm install --save styled-components
 ```
+Added react icons using below command
+```
+npm install react-icons --save
+```
