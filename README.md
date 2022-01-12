@@ -9,3 +9,7 @@ Added react-bootstrap using below command
 ```
 npm install react-bootstrap bootstrap@5.1.3
 ```
+Added style components using below command
+```
+npm install --save styled-components
+```
