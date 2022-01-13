@@ -17,3 +17,7 @@ Added react icons using below command
 ```
 npm install react-icons --save
 ```
+Installed material-ui lab using below command
+```
+npm install @material-ui/lab
+```
