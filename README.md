@@ -21,3 +21,7 @@ Installed material-ui lab using below command
 ```
 npm install @material-ui/lab
 ```
+Installed data-grid to use dataTables
+```
+npm install @mui/x-data-grid
+```

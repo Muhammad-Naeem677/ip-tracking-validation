@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import { TabContext, TabList, TabPanel } from '@material-ui/lab';
 import { Stack } from '@mui/material';
+import HomeDataTable from '../components/HomeDataTable';
 
 const Home = () => {
     const [value, setValue] = React.useState('1');
@@ -24,7 +25,7 @@ const Home = () => {
                         </TabList>
                     </Stack>
                 </Box>
-                <TabPanel value="1">Home tab</TabPanel>
+                <TabPanel value="1"><HomeDataTable/></TabPanel>
                 <TabPanel value="2">History tab</TabPanel>
             </TabContext>
         </div>
