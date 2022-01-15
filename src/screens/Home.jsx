@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 import Dropzone from 'react-dropzone';
 import { DropDownSection, FileDiv } from '../styles/Home';
+import HistoryDataTable from '../components/HistoryDataTable';
 
 
 
@@ -46,15 +47,15 @@ const useStyles = makeStyles((theme) => ({
   
 
 const rows = [
-    { id: 1, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: '35', amount: '2309', validate: 'Booked' },
-    { id: 2, tID: 'KPL25sMQt', bookingDate: '14-01-2022', pinCode: '42', amount: '2309', validate: 'Booked' },
-    { id: 3, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
-    { id: 5, tID: 'R12553kcd', bookingDate: '11-01-2022', pinCode: null, amount: '2309', validate: 'Booked' },
-    { id: 4, tID: '234u54446', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
-    { id: 7, tID: '66fh467hp', bookingDate: '14-01-2022', pinCode: '44', amount: '2309', validate: 'Booked' },
-    { id: 6, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
-    { id: 9, tID: '72fftyRDs', bookingDate: '14-01-2022', pinCode: '65', amount: '2309', validate: 'Booked' },
-    { id: 8, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
+    { id: 1, tracking_id: 'R12553kcd', booking_date: '14-01-2022', customer_pin_code: '35', amount: '2309', book_status: 'Booked' },
+    { id: 2, tracking_id: 'KPL25sMQt', booking_date: '14-01-2022', customer_pin_code: '42', amount: '2309', book_status: 'Booked' },
+    { id: 3, tracking_id: 'R12553kcd', booking_date: '14-01-2022', customer_pin_code: 'NA', amount: 'NA', book_status: 'Not Booked' },
+    { id: 5, tracking_id: 'R12553kcd', booking_date: '11-01-2022', customer_pin_code: null, amount: '2309', book_status: 'Booked' },
+    { id: 4, tracking_id: '234u54446', booking_date: '14-01-2022', customer_pin_code: 'NA', amount: 'NA', book_status: 'Not Booked' },
+    { id: 7, tracking_id: '66fh467hp', booking_date: '14-01-2022', customer_pin_code: '44', amount: '2309', book_status: 'Booked' },
+    { id: 6, tracking_id: 'R12553kcd', booking_date: '14-01-2022', customer_pin_code: 'NA', amount: 'NA', book_status: 'Not Booked' },
+    { id: 9, tracking_id: '72fftyRDs', booking_date: '14-01-2022', customer_pin_code: '65', amount: '2309', book_status: 'Booked' },
+    { id: 8, tracking_id: 'R12553kcd', booking_date: '14-01-2022', customer_pin_code: 'NA', amount: 'NA', book_status: 'Not Booked' },
 ];
 
 const Home = () => {
@@ -110,7 +111,7 @@ const Home = () => {
                         <HomeDataTable rows={rows} />
                     </Stack>
                     </TabPanel>
-                <TabPanel value="2">History tab</TabPanel>
+                <TabPanel value="2"><HistoryDataTable rows={rows} /></TabPanel>
             </TabContext>
         </div>
     );

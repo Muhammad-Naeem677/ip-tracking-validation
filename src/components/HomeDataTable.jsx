@@ -53,11 +53,11 @@ const HomeDataTable = ({rows}) => {
                 <TableBody>
                     {rows.map((row) => (
                     <StyledTableRow key={row.name}>
-                        <StyledTableCell component="th" scope="row">{row.tID}</StyledTableCell>
-                        <StyledTableCell align="right">{row.bookingDate}</StyledTableCell>
-                        <StyledTableCell align="right">{row.pinCode}</StyledTableCell>
+                        <StyledTableCell component="th" scope="row">{row.tracking_id}</StyledTableCell>
+                        <StyledTableCell align="right">{row.booking_date}</StyledTableCell>
+                        <StyledTableCell align="right">{row.customer_pin_code}</StyledTableCell>
                         <StyledTableCell align="right">{row.amount}</StyledTableCell>
-                        <StyledTableCell align="right">{row.validate}</StyledTableCell>
+                        <StyledTableCell align="right">{row.book_status}</StyledTableCell>
                     </StyledTableRow>
                     ))}
                 </TableBody>
