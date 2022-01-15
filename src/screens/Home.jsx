@@ -45,6 +45,18 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 
+const rows = [
+    { id: 1, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: '35', amount: '2309', validate: 'Booked' },
+    { id: 2, tID: 'KPL25sMQt', bookingDate: '14-01-2022', pinCode: '42', amount: '2309', validate: 'Booked' },
+    { id: 3, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
+    { id: 5, tID: 'R12553kcd', bookingDate: '11-01-2022', pinCode: null, amount: '2309', validate: 'Booked' },
+    { id: 4, tID: '234u54446', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
+    { id: 7, tID: '66fh467hp', bookingDate: '14-01-2022', pinCode: '44', amount: '2309', validate: 'Booked' },
+    { id: 6, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
+    { id: 9, tID: '72fftyRDs', bookingDate: '14-01-2022', pinCode: '65', amount: '2309', validate: 'Booked' },
+    { id: 8, tID: 'R12553kcd', bookingDate: '14-01-2022', pinCode: 'NA', amount: 'NA', validate: 'Not Booked' },
+];
+
 const Home = () => {
     const [value, setValue] = React.useState('1');
     const classes = useStyles();
@@ -95,7 +107,7 @@ const Home = () => {
                                 </Dropzone>
                             </Stack>
                         </Container>
-                        {/* <HomeDataTable/> */}
+                        <HomeDataTable rows={rows} />
                     </Stack>
                     </TabPanel>
                 <TabPanel value="2">History tab</TabPanel>
