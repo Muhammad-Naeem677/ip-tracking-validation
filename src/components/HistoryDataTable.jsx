@@ -49,7 +49,7 @@ const HistoryDataTable = ({rows}) => {
                              justifyContent="flex-end"
                              alignItems="flex-end">
                                 <IconButton aria-label="delete" size="large">
-                                    <CloudDownloadSharpIcon sx={{color:"colors.primary"}} fontSize="inherit" />
+                                    <CloudDownloadSharpIcon color='primary' fontSize="inherit" />
                                 </IconButton>
                                 <IconButton aria-label="PreviewIcon" size="large">
                                     <PreviewIcon sx={{color:"green"}} fontSize="inherit" />

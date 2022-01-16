@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
       padding:'20px',
       color:colors.primary
+
     },
     link: {
       textDecoration: "none",
@@ -48,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#ffffff",
         color:"#000000",
     },
-    processBtn:{
-        backgroundColor: colors.primary,
+    indicator:{
+        backgroundColor:"blue"
     }
 
   }));
@@ -131,7 +132,7 @@ const Home = () => {
             <AppBar position="static"  className={classes.toolbar} >
                 <CssBaseline />
                 <Toolbar>
-                    <Typography variant="h3" className={classes.logo}>
+                    <Typography  variant="h3" className={classes.logo}>
                     TRACK N TRACE
                     </Typography>
                     <div className={classes.navlinks}>
@@ -139,9 +140,9 @@ const Home = () => {
                 </Toolbar>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider', p:2 }}>
                     <Stack alignItems={"center"}>
-                        <TabList textColor='success' onChange={handleChange} aria-label="lab API tabs example">
-                            <Tab label="HOME" value="1" />
-                            <Tab label="HISTORY" value="2" />
+                        <TabList textColor='primary' TabIndicatorProps={{ style: { background: colors.primary } }}  onChange={handleChange} aria-label="lab API tabs example">
+                            <Tab classes={{indicator: classes.indicator}} label="HOME" value="1" />
+                            <Tab classes={{indicator: classes.indicator}} label="HISTORY" value="2" />
                         </TabList>
                     </Stack>
                 </Box>
@@ -158,7 +159,7 @@ const Home = () => {
                                     {
                                         file ?
                                             <>
-                                                <DoubleArrowIcon  color='primary'/>
+                                                <DoubleArrowIcon  color={'success'}/>
                                                 <Button onClick={processFile}  className={classes.processBtn}>PROCESS NOW</Button>
                                             </>
                                         :
@@ -177,7 +178,7 @@ const Home = () => {
                                     </DropDownSection>
                                 )}
                                 </Dropzone>
-                            </Stack>
+                            </Stack >
                         </Container>
                         :
                         <Stack 
@@ -185,7 +186,12 @@ const Home = () => {
                          alignItems={"center"}
                          spacing={3}
                          >
-                            <h5>Processing</h5>
+                            <Stack direction={"row"}>
+                                <h5>Processing</h5>
+                                <div style={{padding: '4px'}} >
+                                    <p>({rows.length} rows)</p>
+                                </div>
+                            </Stack>
                             <CircularStatic progress={(rows.length/totalRows)*100}/>
                             <HomeDataTable rows={rows}/>
                         </Stack>

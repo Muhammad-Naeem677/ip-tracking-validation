@@ -45,14 +45,33 @@ const Login = () => {
             invalidPassword : false,
             passwordError:'',
         });
-      
-        if(values.username.length == 0){
+
+        console.log(values)
+        if(values.username.length == 0 && values.password.length == 0){
+            console.log('3333333333333')
             setValues({
                 ...values,
                 invalidUsername : true,
-                usernameError: 'Username cannot be empty',
+                usernameError: 'username cannot be empty',
+                invalidPassword : true,
+                passwordError: 'password cannot be empty',
+            });
+            console.log(values)
+        } else if(values.username.length == 0){
+            setValues({
+                ...values,
+                invalidUsername : true,
+                usernameError: 'username cannot be empty',
             });
         } else if(values.password.length == 0){
+            setValues({
+                ...values,
+                invalidPassword : true,
+                passwordError: 'password cannot be empty',
+            });
+        }
+
+        if(values.password.length == 0){
             setValues({
                 ...values,
                 invalidPassword : true,
@@ -74,7 +93,7 @@ const Login = () => {
                 sx={{
                     width:'400px',
                     height: '80%',
-                    bgcolor: 'colors.white',
+                    // bgcolor: 'white',
                     color: 'secondary.contrastText',
                     p: 2,
                 }}
