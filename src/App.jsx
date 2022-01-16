@@ -4,7 +4,7 @@ import Home from './screens/Home';
 import Login from './screens/Login';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { purple } from '@mui/material/colors';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
